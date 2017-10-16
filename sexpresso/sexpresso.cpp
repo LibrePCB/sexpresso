@@ -190,8 +190,8 @@ namespace sexpresso {
 		}
 	}
 
-	auto Sexp::toString() const -> std::string {
-		auto ostream = std::ostringstream{};
+    auto Sexp::toString() const -> std::string {
+        std::ostringstream ostream;
 		// outer sexp does not get surrounded by ()
 		switch(this->kind) {
 		case SexpValueKind::STRING:
@@ -204,7 +204,7 @@ namespace sexpresso {
 			}
 		}
 		return ostream.str();
-	}
+    }
 
 	auto Sexp::isString() const -> bool {
 		return this->kind == SexpValueKind::STRING;
